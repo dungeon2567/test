@@ -7,7 +7,7 @@ import { NotificationsProvider } from '@mantine/notifications';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
-  const [colorScheme, setColorScheme] = useState<ColorScheme>(() => getCookie('mantine-color-scheme', appContext.ctx) || 'dark');
+  const [colorScheme, setColorScheme] = useState<ColorScheme>(() => (getCookie('mantine-color-scheme', appContext.ctx) || 'dark') as ColorScheme);
 
   const toggleColorScheme = (value?: ColorScheme) => {
     const nextColorScheme = value || (colorScheme === 'dark' ? 'light' : 'dark');
